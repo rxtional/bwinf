@@ -1,3 +1,6 @@
+import sys
+
+
 class Project:
     def __init__(self, votes):
         self.votes = votes
@@ -8,9 +11,20 @@ class Project:
 
 
 def main():
-    project = Project(24)
-    project.update_donation_amount(calculate_amount(project.votes, 0))
-    print(project.donation_amount)
+    validate_sys_arguments()
+
+
+def validate_sys_arguments():
+    if len(sys.argv) != 2:
+        sys.exit("Use: python spendenaktion.py [file]")
+
+    try:
+        with open(f"Einlesedateien/{sys.argv[1]}", "r") as file:
+            return [line.strip() for line in file]
+    except FileNotFoundError:
+        sys.exit("FNF: File not Found.")
+
+    return True
 
 
 def calculate_amount(value, number_divisions):
