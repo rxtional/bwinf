@@ -1,0 +1,4 @@
+TODO:
+
+1. finish hill climb algorithm
+2. connect hill climb algortihm with main program
