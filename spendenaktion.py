@@ -18,6 +18,9 @@ def main():
 
 
 def berechne_betrag(wert, anzahl_teilungen):
+    """
+    Berechnet, wie oft man eine Zahl durch 2 teilen kann und multipliziert das Ergebnis mit 100.
+    """
     if wert % 2 != 0:
         return anzahl_teilungen * 100
 
