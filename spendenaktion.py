@@ -3,14 +3,10 @@ class Projekt:
         self.stimmen = stimmen
         self.spendenbetrag = 0
 
-    def berechne_spendenbetrag(self, stimmenwert, anzahl_teilungen):
-        if stimmenwert % 2 != 0:
-            spendenbetrag = anzahl_teilungen * 100
+    def aktualisiere_spendenbetrag(self, betrag):
+        self.spendenbetrag = betrag
 
-            self.spendenbetrag = spendenbetrag
-            return spendenbetrag
-        return self.berechne_spendenbetrag(
-            stimmenwert=stimmenwert/2, anzahl_teilungen=anzahl_teilungen+1)
+        return betrag
 
 
 def main():
@@ -18,6 +14,13 @@ def main():
     projekt = Projekt(stimmen=80)
     print(
         f"[db] spendenbetrag projekt: {projekt.berechne_spendenbetrag(stimmenwert=projekt.stimmen, anzahl_teilungen=0)}")
+
+
+def berechne_betrag(wert, anzahl_teilungen):
+    if wert % 2 != 0:
+        return anzahl_teilungen * 100
+
+    return berechne_betrag(wert // 2, anzahl_teilungen + 1)
 
 
 if __name__ == "__main__":
