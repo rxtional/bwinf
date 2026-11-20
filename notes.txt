@@ -1,0 +1,9 @@
+simple hill climb algorithm
+
+requirements:
+  1. intial state
+  2. actions
+  3. neighbors
+  4. transition model
+  5. evaluation
+  6. goal state

@@ -11,9 +11,10 @@ class Projekt:
 
 def main():
     # test
-    projekt = Projekt(stimmen=80)
-    print(
-        f"[db] spendenbetrag projekt: {projekt.berechne_spendenbetrag(stimmenwert=projekt.stimmen, anzahl_teilungen=0)}")
+    projekt = Projekt(stimmen=64)
+    betrag = berechne_betrag(projekt.stimmen, 0)
+    projekt.aktualisiere_spendenbetrag(betrag)
+    print(projekt.spendenbetrag)
 
 
 def berechne_betrag(wert, anzahl_teilungen):
